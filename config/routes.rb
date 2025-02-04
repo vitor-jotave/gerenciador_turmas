@@ -24,7 +24,13 @@ Rails.application.routes.draw do
       resources :responses, only: [ :new, :create ]
     end
     resources :pending_forms, only: [ :index ]
-    resources :users
+    resources :users do
+      member do
+        post :regenerate_password
+        get :manage_classes
+        post :update_classes
+      end
+    end
     get "dashboard", to: "dashboard#index"
   end
 
