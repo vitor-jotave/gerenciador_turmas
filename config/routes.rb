@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: [ :registrations ]
+  devise_for :users
 
   # Rota raiz para usuários autenticados
   authenticated :user do
@@ -24,7 +24,6 @@ Rails.application.routes.draw do
       resources :responses, only: [ :new, :create ]
     end
     resources :pending_forms, only: [ :index ]
-    resources :users
     get "dashboard", to: "dashboard#index"
   end
 
