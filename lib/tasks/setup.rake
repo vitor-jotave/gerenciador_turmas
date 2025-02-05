@@ -2,7 +2,7 @@ namespace :setup do
   desc "Cria dados iniciais necessários para o sistema"
   task initial_data: :environment do
     # Criar departamento padrão
-    department = Department.find_or_create_by!(name: "DEPTO CIÊNCIAS DA COMPUTAÇÃO")
+    department = Department.find_or_create_by!(name: "Departamento Padrão")
 
     # Criar usuário administrador
     admin = User.find_or_initialize_by(email: "admin@example.com")
